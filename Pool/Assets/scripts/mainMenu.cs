@@ -7,6 +7,7 @@ public class mainMenu : MonoBehaviour {
     // This here goes to the game 
 	public void playGame()
     {
+        //play level1
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     //this would quit out of the game 
@@ -22,7 +23,7 @@ public class mainMenu : MonoBehaviour {
     }
 
     public void level2() {
-        // load main menu
+        // load level 2
         SceneManager.LoadScene("Level2");
     }
 }

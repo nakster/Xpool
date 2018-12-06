@@ -34,6 +34,9 @@ public class turn_controller : MonoBehaviour
 
     // Convert the 2D position of the mouse into a
     // 3D position.  Display these on the game window.
+    // https://docs.unity3d.com/ScriptReference/Input-mousePosition.html
+    // https://stackoverflow.com/questions/46998241/getting-mouse-position-in-unity
+    // https://www.reddit.com/r/Unity2D/comments/7tebd6/unity_2d_how_to_get_the_mouse_position_in_world/
     void OnGUI()
     {
 
@@ -70,7 +73,6 @@ public class turn_controller : MonoBehaviour
             localPos.x = -8.53f - Mathf.Abs(length); ;
             cue.transform.localPosition = localPos;
 
-
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -84,9 +86,13 @@ public class turn_controller : MonoBehaviour
         {
             if (HasClicked)
             {
+                //https://answers.unity.com/questions/1164227/so-i-know-this-has-been-asked-before-but-i-feel-th.html
+                //https://answers.unity.com/questions/603030/mathfabsmytransformposition-targetposition.html
+                // https://forum.unity.com/threads/strange-behavior-of-mathf-abs.521571/
                 length2 = Mathf.Abs(Vector2.Dot((p - rb.transform.position).normalized, p - storedpos));
                 rb.velocity = (storedpos - rb.transform.position).normalized * (length * multiplier);
             
+                // https://forum.unity.com/threads/transform-position-assign-attempt-for-is-not-valid-and-invalid-aabb-errors.471396/
                 localPos = cue.transform.localPosition;
                 localPos.x = -8.53f;
                 cue.transform.localPosition = localPos;

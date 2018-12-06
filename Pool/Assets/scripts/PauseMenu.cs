@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour {
    
     // Update is called once per frame
     void Update () {
+        //this is for when escape button is pressed 
         if(Input.GetKeyDown(KeyCode.Escape)) {
             if (GamePaused == true) {
                 Resume();
@@ -18,29 +19,31 @@ public class PauseMenu : MonoBehaviour {
             }
         }
     }
- 
+
+    //resumes the game
     public void Resume() {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f; // unfreeze gameplay
+        Time.timeScale = 1f; 
         GamePaused = false;
     }
  
+    //pauses the game 
     public void Pause() {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f; // freeze gameplay
+        Time.timeScale = 0f; 
         GamePaused = true;
     }
  
+    //loadts the option menu
     public void LoadOptions() {
-        // Time.timeScale = 1f;
         SceneManager.LoadScene("Options");
     }
- 
+
+    //goes to the mian menu
     public void Quit() {
         Time.timeScale = 1f;
 		Debug.Log("In quit");
- 
-        // load main menu
+
         SceneManager.LoadScene("Main");
     }
 }
