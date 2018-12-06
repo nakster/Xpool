@@ -15,13 +15,12 @@ public class pocket : MonoBehaviour {
         }
         else
         {
-            if (other.Equals(8))
+            if (other.gameObject.name == "8")
             {
-               // Debug.Log("destroyed " + other);
+                Debug.Log("also other " + other);
                // Application.Quit();
+                  SceneManager.LoadScene("Main");
 
-                Scene scene = SceneManager.GetActiveScene();
-                SceneManager.LoadScene(scene.name);
             }
             else
             {
