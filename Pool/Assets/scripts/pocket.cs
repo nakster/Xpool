@@ -13,12 +13,16 @@ public class pocket : MonoBehaviour {
         if (other.gameObject.tag == "keep")
         {
             Debug.Log("pocketed " + other.gameObject.name + "NOOOOOO");
+            //put it to the orginal position
+            // cant set the positionof the object directly
+            // create a variable 
             localPos = other.gameObject.transform.localPosition;
             localPos.x = -4.15f;
             localPos.y = 0;
             localPos.z = 0;
             other.gameObject.transform.localPosition = localPos;
 
+            //set it inactive and then active again
             other.gameObject.SetActive(false);
             other.gameObject.SetActive(true);
             
