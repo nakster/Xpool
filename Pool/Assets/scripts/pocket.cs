@@ -27,6 +27,7 @@ public class pocket : MonoBehaviour {
             {
                 Destroy(other.gameObject);
                 Debug.Log("destroyed " + other);
+                score.scoreValue += 10;
             }
            
         }
